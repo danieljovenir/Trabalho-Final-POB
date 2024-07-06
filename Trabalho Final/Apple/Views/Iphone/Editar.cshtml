@@ -1,0 +1,35 @@
+﻿@model ControleDeIphone.Models.IphoneModel
+@{
+    ViewData["Title"] = "Editar Iphones Cadastrados";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1>Editar Cadastro de Iphones</h1>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="Iphone" asp-action="Editar" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label for="nome"><b>Nome</b></label>
+                    <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do seu Iphone">
+                </div>
+                <div class="form-group">
+                    <label for="Cor"><b>Cor</b></label>
+                    <input type="text" asp-for="Cor" class="form-control" placeholder="Digite a Cor do seu Iphone">
+                </div>
+                <div class="form-group">
+                    <label for="Preco"><b>Preço</b></label>
+                    <input type="number" asp-for="Preco" class="form-control" placeholder="Digite o Valor do seu Iphone">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Alterar</button>
+                    <a class="btn btn-secondary" asp-controller="Iphone" asp-action="Index" role="button">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">

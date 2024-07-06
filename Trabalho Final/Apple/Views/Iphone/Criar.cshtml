@@ -1,0 +1,32 @@
+﻿@model ControleDeIphone.Models.IphoneModel
+@{
+    ViewData["Title"] = "Criar Iphones";
+}
+
+<div class="text-center">
+
+    <h1>Cadastrar Iphones</h1>
+
+</div>
+
+<form asp-controller="Iphone" asp-action="Criar" method="post">
+
+    <div class="form-group">
+        <label for="nome"><b>Nome</b></label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do seu Iphone">
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="Cor"><b>Cor</b></label>
+        <input type="text" asp-for="Cor" class="form-control" placeholder="Digite a Cor do seu Iphone">
+    </div>
+    <br />
+    <div class="form-group">
+        <label for="Preco"><b>Preco</b></label>
+        <input type="number" asp-for="Preco" class="form-control" placeholder="Digite o Valor do seu Iphone">
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary btn-block" >Adicionar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Iphone" asp-action="index" role="button">Voltar</a>
+</form>
+

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ControleDeIphone.Models.Iphone>
+
+@{
+    ViewData["Title"] = "Pesquisa de Produtos";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Produtos</h1>
+    <div class="card">
+        <div class="card-header">
+            Lista de Produtos
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var produto in Model)
+                    {
+                        <tr>
+                            <td>@produto.Nome</td>
+                            <td>@produto.Descricao</td>
+                            <td>@produto.Preco.ToString("C")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<link href="~/css/site.css" rel="stylesheet">

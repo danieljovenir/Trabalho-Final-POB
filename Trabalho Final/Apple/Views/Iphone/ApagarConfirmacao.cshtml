@@ -1,0 +1,25 @@
+﻿@model ControleDeIphone.Models.IphoneModel
+@{
+    ViewData["Title"] = "Confirmação de Exclusão de iPhone";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1>@ViewData["Title"]</h1>
+        <h3>Tem certeza de que deseja apagar o seguinte iPhone?</h3>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4>@Model.Nome</h4>
+                <p><strong>Cor:</strong> @Model.Cor</p>
+                <p><strong>Preço:</strong> @Model.Preco.ToString("C")</p>
+            </div>
+        </div>
+
+        <form asp-action="Apagar" method="post" class="mt-4">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Apagar</button>
+            <a class="btn btn-secondary ml-2" asp-action="Index">Cancelar</a>
+        </form>
+    </div>
+</div>
